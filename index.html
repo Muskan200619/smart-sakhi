@@ -28,13 +28,15 @@
 
         /* Sidebar Styling */
         .sidebar {
-            width: 260px;
+            width: 250px;
             background: var(--dark-blue);
             height: 100vh;
             color: white;
             position: fixed;
             padding: 20px;
             box-sizing: border-box;
+            transition: 0.3s;
+            z-index: 1000;
         }
 
         .logo-area {
@@ -122,6 +124,66 @@
         .critical {
             background: #f8d7da;
             color: #842029;
+        }
+
+        /* --- Aapka purana sara code yahan tak --- */
+
+        /* Mobile ke liye Media Query */
+        /* Purane Media Query ko isse badal dein */
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+                /* Sidebar aur Main ko ek ke niche ek laane ke liye */
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                /* Fixed position hata di */
+                padding: 15px;
+            }
+
+            .main {
+                margin-left: 0;
+                /* Sidebar ka gap khatam */
+                padding: 15px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .live-kit-card {
+                flex-direction: column;
+                /* Card ke andar ka content vertical ho jayega */
+                text-align: center;
+                gap: 15px;
+            }
+
+            .kit-value {
+                font-size: 48px;
+                /* Mobile par font thoda chota */
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 10px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            /* Table ko katne se bachane ke liye */
+            .table-container {
+                overflow-x: auto;
+                display: block;
+            }
+
+            table {
+                min-width: 500px;
+                /* Force horizontal scroll inside container */
+            }
         }
     </style>
 </head>
@@ -248,6 +310,5 @@
         }
     </script>
 </body>
-
 
 </html>
