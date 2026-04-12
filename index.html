@@ -189,8 +189,8 @@
                 // --- FIX STARTS HERE ---
                 // Humein "1st Floor" ko "1st_Floor" banana hai taaki Arduino ke data se match kare
                 let floorPath = floor.replace(" ", "_"); 
-                let dbPath = `/AKS_University/${block.replace(" ", "_")}/${floorPath}`;
-
+                let dbPath = "/AKS_University/Block_A/1st_Floor";
+                
                 database.ref(dbPath).on('value', (snapshot) => {
                     const stock = snapshot.val() || 0;
                     const stockText = document.getElementById(stockId);
